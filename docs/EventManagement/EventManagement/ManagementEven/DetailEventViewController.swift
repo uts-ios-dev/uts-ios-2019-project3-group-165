@@ -28,7 +28,6 @@ class DetailEventViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         titleEvent.text = event?.eventName
-        time.text = timeEvent
         content.text = event?.eventContent
         Details.text = details
     }
@@ -40,6 +39,11 @@ class DetailEventViewController: UIViewController {
     @IBAction func Save(_ sender: UIButton) {
         content.text = "EventTitle:   \(titleEvent.text!) \n\nTime:    \(time.text!) \n\nDetails:   \(Details.text!)"
         // Click the button to show the value of textField in the textView.
+        event?.eventName = titleEvent.text!
+        timeEvent = time.text!
+        event?.eventContent = content.text!
+        details = Details.text!
+        // return the event title, time, details just typed by yourself
     }
     
 
